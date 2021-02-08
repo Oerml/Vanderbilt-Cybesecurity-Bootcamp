@@ -7,7 +7,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - The ansible-playbooks install-elk.yml, metric-playbook.yml, and filebeat-playbook.yml are needed to create and implement the elk-server
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -20,7 +20,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly redundant, in addition to restricting traffic to the network.
-- Loab balncers protect the system from DDoS attacks by shiffting attack traffic, and a jump box is to give access to the user from a single node that can be secured and monitored
+- Load balancers protect the system from DDoS attacks by shifting attack traffic, and a jump box is to give access to the user from a single node that can be secured and monitored
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - Filebeat watches for logfiles/locations and collects log events
@@ -62,12 +62,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Create a new vm, keep note of the public and private IP, connect to kibana portal to measure metrics
-- download and configure the elk-docker, in adition add elk under webservers in the config file, and map elk to the ports 5601,9200,5044
-- laucnh and expose the container, connect via ssh
+- download and configure the elk-docker, in addition add elk under webservers in the config file, and map elk to the ports 5601,9200,5044
+- launch and expose the container, connect via ssh
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot in the Diagrams folder `docker ps` shows the completed after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -77,8 +76,8 @@ We have installed the following Beats on these machines:
 - Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat is a lightweat shipper for forwarding and centralizing log data. Filebeat monitors logs, collects log events, then forwards them to elasticsearch or logstash
-- Metricbeat collects metrics from the operatin system and from servies running on the server. Metricbeat takes These metrics and stats and ships them to an out you specify
+- Filebeat is a lightweight shipper for forwarding and centralizing log data. Filebeat monitors logs, collects log events, then forwards them to elasticsearch or logstash
+- Metricbeat collects metrics from the operating system and from servcies running on the server. Metricbeat takes These metrics and stats and ships them to an out you specify
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
